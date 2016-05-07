@@ -52,5 +52,3 @@ module.exports = {
         api.Events.removeListener("userMsg", handleMsg);
     }
 }
-
-bacchanalia
