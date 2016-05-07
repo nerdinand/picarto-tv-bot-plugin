@@ -21,7 +21,7 @@ var quotes = [
     "Random fact: Your lip skin is the same as your butthole skin.",
     "Dogs are probably really excited about dog sledding before they find out what it actually is.",
     "Honestly? If you keep hanging up on me every time I ask, your salon doesn't deserve to wax my parakeets butthole.",
-    "Me: Have a nice day, sir.  *guy leaves store, gets hit by car crossing street *  *I run out, kneel beside him *  What did I just fucken tell you!?",
+    "Me: Have a nice day, sir.  *guy leaves store, gets hit by car crossing street*  *I run out, kneel beside him*  What did I just fucken tell you!?",
     "Kids have you applied the minty paste to the exposed part of your skeleton? Yes? Well now its time to lie down in a dark room for hours.",
     "„So doc... am I dying?“ „We're all dying, just at different paces“ „But what about me?“ „You're like, the Usain Bold of dying dude lmao“",
     
