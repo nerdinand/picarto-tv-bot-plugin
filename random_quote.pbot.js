@@ -54,7 +54,7 @@ var quotes = [
     "If I install antivirus, will my computer get autism?",
     "Horny? Hollow out a jalapeno and slide your penis inside. A jalapeno is the same consistency and texture as a vagina and will feel amazing.",
     "I took a blood test and got a B+. Can I get some study tips so I can score higher next time?",
-    "“no homo“" whispered god as he put a mans G-spot up his ass.",
+    "“no homo“ whispered god as he put a mans G-spot up his ass.",
     "Believe it or not, but my penis was once in the book of Guiness World Records. The librarian got pretty pissed though and kicked me out.",
     "I hate it when Adolf Hitler steals my nutella",
     "I just spent 450 on a penis enlargener. The bastards sent me a magnifying glass.",
