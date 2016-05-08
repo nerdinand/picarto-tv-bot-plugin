@@ -71,7 +71,9 @@ var quotes = [
 ]
 
 function handleMsg(data, checkWhitelist) {
-    if (data.msg.toLowerCase().startsWith("!quote")) {
+    if (data.msg.toLowerCase().startsWith("!quotestats")) {
+        api.Messages.send("/me knows " + quotes.length + " quotes.");
+    } else if (data.msg.toLowerCase().startsWith("!quote")) {
         var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
         api.Messages.send("/me " + randomQuote);
     }
