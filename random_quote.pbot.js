@@ -67,6 +67,22 @@ var quotes = [
     "Water makes me so wet",
     "Rainbow actually stands for the colors of the rainbow: Red, orAnge, YellIow, gNreen, blueB, indigoO, Wviolet",
     "Are you a sofa because you're sofaking annoying"
+    "Have you looked up Lemonparty yet? Its said it's the best kind of party."
+    "Creampie? That sounds like an interesting recipe!"
+    "There's nothing worse than post-anal-sex lube in your ass"
+    "And thus everyone was wanking"
+    "I heard people died trying to suck their own dicks"
+    "Extensive masturbation leads to ascention"
+    "Wtf is natural anal lubricant made of? It sounds disgusting"
+    "Take the nearest object to your left and stick it up your butt! How fucked are you?"
+    "'sad but true, sex I have none' -'I'm sure your hand disagrees'"
+    "Everytime I see someone smacking down on a girl with his balls flopping like a noodle in a jetengine stream I just wonder how they survive that pain."
+    "'Balls deep' is a terrible expression. If you're so deep that your balls are inside the vagina you're in for a BAD time."
+    "During winter doggystyle is great, but in summer the balls hang low and damn it hurts every time you slap."
+    "Australians are like French kisses, but down under"
+    "It said very clearly on the dick instructions to never stick it in crazy"
+    "If you run naked around a tree at about 87 km/h there is a possibility of fucking yourself -Albert Einstein"
+    "'I may be too straight for my own good' - 'that's where the no homo comes in'"
     
 ]
 
