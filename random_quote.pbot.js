@@ -3,7 +3,7 @@ var api;
 var communitygames = [
 "The closest object to your right is what's going up your butt. What is it and how fucked are you?"
 
-]
+];
 
 var quotes = [
     "Anything's a dildo if you're brave enough",
@@ -97,10 +97,10 @@ function handleMsg(data, checkWhitelist) {
     } else if (data.msg.toLowerCase().startsWith("!quote")) {
         var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
         api.Messages.send("/me " + randomQuote);
-    } else if (data.msg.toLowerCase() .startsWith ("!communitygame")) {
+    } else if (data.msg.toLowerCase().startsWith ("!communitygame")) {
         var communitygame = communitygames[Math.floor(Math.random() * communitygames.length)];
         api.Messages.send("/me " + communitygame);
-    } else if (data.msg.toLowerCase() .startsWith ("!streamschedule")) {
+    } else if (data.msg.toLowerCase().startsWith ("!streamschedule")) {
         api.Messages.send("/me The next scheduled stream is Sunday 20:30 UTC +1");
     }  
 }
