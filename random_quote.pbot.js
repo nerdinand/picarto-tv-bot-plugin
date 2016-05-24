@@ -100,7 +100,9 @@ function handleMsg(data, checkWhitelist) {
     } else if (data.msg.toLowerCase() .startsWith ("!communitygame")) {
         var communitygame = communitygames[Math.floor(Math.random() * communitygames.length)];
         api.Messages.send("/me " + communitygame);
-    }    
+    } else if (data.msg.toLowerCase() .startsWith ("!streamschedule")) {
+        api.Messages.send("/me The next scheduled stream is Sunday 20:30 UTC +1");
+    }  
 }
 
 module.exports = {
