@@ -1,5 +1,10 @@
 var api;
 
+var communitygames = [
+"The closest object to your right is what's going up your butt. What is it and how fucked are you?"
+
+]
+
 var quotes = [
     "Anything's a dildo if you're brave enough",
     "Have you heard of the Dead Sea, the saltiest place on earth? Next to your bitch ass, that is...",
@@ -92,7 +97,10 @@ function handleMsg(data, checkWhitelist) {
     } else if (data.msg.toLowerCase().startsWith("!quote")) {
         var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
         api.Messages.send("/me " + randomQuote);
-    }
+    } else if (data.msg.toLowerCase() .startsWith ("!communitygame")) {
+        var communitygame = communitygames[Math.floor(Math.random() * communitygames.length)];
+        api.Messages.send("/me " + communitygame);
+    }    
 }
 
 module.exports = {
