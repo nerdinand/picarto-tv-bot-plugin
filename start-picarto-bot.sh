@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /usr/local/lib/node_modules/picarto-chat-bot
-node app.js -c Leyanor -t '$PICARTO_TOKEN'
+cd /var/picarto-bot/misaka/
+node bin/misaka.js -c config/leyanor.json -r Leyanor

@@ -1,10 +1,17 @@
-var api;
+function Leyanor() {
+  this.info = {
+    name: 'Leyanor',
+    description: 'Picarto.tv bot for Leyanor',
+    commands: [
+      { name: 'quote', callback: Leyanor.prototype.onQuote.bind(this) },
+      { name: 'quotestats', callback: Leyanor.prototype.onQuoteStats.bind(this) },
+      { name: 'communitygame', callback: Leyanor.prototype.onCommunityGame.bind(this) },
+      { name: 'streamschedule', callback: Leyanor.prototype.onStreamSchedule.bind(this) }
+    ]
+  };
+};
 
-var communitygames = [
-    "The closest object to your right is what's going up your butt. What is it and how fucked are you?"
-];
-
-var quotes = [
+Leyanor.quotes = [
     "Anything's a dildo if you're brave enough",
     "Have you heard of the Dead Sea, the saltiest place on earth? Next to your bitch ass, that is...",
     "I wish everything was as easy as getting fat",
@@ -89,34 +96,27 @@ var quotes = [
     "'I may be too straight for my own good' - 'that's where the no homo comes in'"
 ]
 
-function handleMsg(data, checkWhitelist) {
-    if (data.msg.toLowerCase().startsWith("!quotestats")) {
-        api.Messages.send("/me knows " + quotes.length + " quotes.");
-    } else if (data.msg.toLowerCase().startsWith("!quote")) {
-        var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-        api.Messages.send("/me " + randomQuote);
-    } else if (data.msg.toLowerCase().startsWith ("!communitygame")) {
-        var communitygame = communitygames[Math.floor(Math.random() * communitygames.length)];
-        api.Messages.send("/me " + communitygame);
-    } else if (data.msg.toLowerCase().startsWith ("!streamschedule")) {
-        api.Messages.send("/me The next scheduled stream is Sunday 20:30 UTC +1");
-    }
-}
+Leyanor.communitygames = [
+    "The closest object to your right is what's going up your butt. What is it and how fucked are you?"
+];
 
-module.exports = {
-    meta_inf: {
-        name: "Bot for Leyanor's picarto.tv channel",
-        version: "1.0.0",
-        description: "Type !quote to receive a random quote from a predefined list.",
-        author: "nerdinand"
-    },
-    load: function (_api) {
-        api = _api;
-    },
-    start: function () {
-        api.Events.on("userMsg", handleMsg);
-    },
-    stop: function () {
-        api.Events.removeListener("userMsg", handleMsg);
-    }
-}
+
+Leyanor.prototype.onQuote = function(data) {
+  var randomQuote = Leyanor.quotes[Math.floor(Math.random() * Leyanor.quotes.length)];
+  return "/me " + randomQuote;
+};
+
+Leyanor.prototype.onQuoteStats = function(data) {
+  return "/me knows " + Leyanor.quotes.length + " quotes.";
+};
+
+Leyanor.prototype.onCommunityGame = function(data) {
+  var communitygame = Leyanor.communitygames[Math.floor(Math.random() * Leyanor.communitygames.length)];
+  return "/me " + communitygame;
+};
+
+Leyanor.prototype.onStreamSchedule = function(data) {
+  return "/me The next scheduled stream is Sunday 20:30 UTC +1";
+};
+
+module.exports = Leyanor;
