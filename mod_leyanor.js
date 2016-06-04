@@ -6,7 +6,10 @@ function Leyanor() {
       { name: 'quote', callback: Leyanor.prototype.onQuote.bind(this) },
       { name: 'quotestats', callback: Leyanor.prototype.onQuoteStats.bind(this) },
       { name: 'communitygame', callback: Leyanor.prototype.onCommunityGame.bind(this) },
-      { name: 'streamschedule', callback: Leyanor.prototype.onStreamSchedule.bind(this) }
+      { name: 'streamschedule', callback: Leyanor.prototype.onStreamSchedule.bind(this) },
+      { name: 'raffleregister', callback: Leyanor.prototype.onRaffleRegister.bind(this) },
+      { name: 'raffleroll', callback: Leyanor.prototype.onRaffleRoll.bind(this) },
+      { name: 'raffleclear', callback: Leyanor.prototype.onRaffleClear.bind(this) }
     ]
   };
 };
@@ -100,6 +103,7 @@ Leyanor.communitygames = [
     "The closest object to your right is what's going up your butt. What is it and how fucked are you?"
 ];
 
+Leyanor.raffleRoster = []
 
 Leyanor.prototype.onQuote = function(data) {
   var randomQuote = Leyanor.quotes[Math.floor(Math.random() * Leyanor.quotes.length)];
@@ -118,5 +122,31 @@ Leyanor.prototype.onCommunityGame = function(data) {
 Leyanor.prototype.onStreamSchedule = function(data) {
   return "/me The next scheduled stream is Sunday 20:30 UTC +1";
 };
+
+Leyanor.prototype.onRaffleRegister = function(data){
+    newRosterItem = data.parsed.tail;
+
+    if (newRosterItem === "") {
+        return "/me Please supply a name to be registered."
+    } else {
+        Leyanor.raffleRoster.push(newRosterItem);
+        return "/me " + newRosterItem + " has been registered.";
+    }
+};
+
+Leyanor.prototype.onRaffleRoll = function(data){
+    if (Leyanor.raffleRoster.length > 0) {
+        var raffleWinner = Leyanor.raffleRoster[Math.floor(Math.random() * Leyanor.raffleRoster.length)];
+        return "/me " + raffleWinner + " has won the raffle!";
+    } else {
+        return "/me No one registered for the raffle... :(";
+    }
+};
+
+Leyanor.prototype.onRaffleClear = function(data){
+    Leyanor.raffleRoster = [];
+    return "/me The raffle roster has been cleared.";
+};
+
 
 module.exports = Leyanor;
