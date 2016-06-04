@@ -9,7 +9,8 @@ function Leyanor() {
       { name: 'streamschedule', callback: Leyanor.prototype.onStreamSchedule.bind(this) },
       { name: 'raffleregister', callback: Leyanor.prototype.onRaffleRegister.bind(this) },
       { name: 'raffleroll', callback: Leyanor.prototype.onRaffleRoll.bind(this) },
-      { name: 'raffleclear', callback: Leyanor.prototype.onRaffleClear.bind(this) }
+      { name: 'raffleclear', callback: Leyanor.prototype.onRaffleClear.bind(this) },
+      { name: 'rafflelist', callback: Leyanor.prototype.onRaffleList.bind(this) }
     ]
   };
 };
@@ -127,10 +128,14 @@ Leyanor.prototype.onRaffleRegister = function(data){
     newRosterItem = data.parsed.tail;
 
     if (newRosterItem === "") {
-        return "/me Please supply a name to be registered."
+        return "/me Please supply a name to be registered.";
     } else {
-        Leyanor.raffleRoster.push(newRosterItem);
-        return "/me " + newRosterItem + " has been registered.";
+        if (Leyanor.raffleRoster.indexOf(newRosterItem) != -1) {
+            return "/me You can't enter twice for the raffle.";
+        } else {
+            Leyanor.raffleRoster.push(newRosterItem);
+            return "/me " + newRosterItem + " has been registered.";
+        }
     }
 };
 
@@ -146,6 +151,10 @@ Leyanor.prototype.onRaffleRoll = function(data){
 Leyanor.prototype.onRaffleClear = function(data){
     Leyanor.raffleRoster = [];
     return "/me The raffle roster has been cleared.";
+};
+
+Leyanor.prototype.onRaffleList = function(data) {
+    return "/me The raffle roster contains " + Leyanor.raffleRoster.length + " entries: " + Leyanor.raffleRoster;
 };
 
 
